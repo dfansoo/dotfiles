@@ -28,3 +28,8 @@ fnm use lts-latest
 fnm default lts-latest
 npm install -g postman-cli
 # --- end node + postman cli ---
+
+# --- docker ---
+sudo systemctl enable --now docker.service
+sudo usermod -aG docker dfanso
+# --- end docker ---
