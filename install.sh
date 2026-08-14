@@ -9,7 +9,8 @@ sudo pacman -S --needed --noconfirm \
   ttf-jetbrains-mono-nerd \
   jdk-openjdk maven dotnet-sdk-10.0 bun fnm \
   docker docker-compose \
-  azure-cli
+  azure-cli \
+  network-manager-applet networkmanager-dmenu
 # --- end package installation ---
 
 # --- stow ---
