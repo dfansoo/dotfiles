@@ -61,11 +61,6 @@ tooltip label {
   color: #161616;
 }
 
-#workspaces button:hover {
-  background: linear-gradient(180deg, #161616 25%, #33b1ff);
-  color: #f2f4f8;
-}
-
 /* --- Right-side modules --- */
 
 #backlight,
@@ -84,18 +79,6 @@ tooltip label {
   color: #f2f4f8;
   margin: 3px 1px;
   padding: 1px 8px;
-}
-
-#backlight:hover,
-#idle_inhibitor:hover,
-#mpris:hover,
-#pulseaudio:hover,
-#network:hover,
-#cpu:hover,
-#memory:hover,
-#battery:hover,
-#clock:hover {
-  background: linear-gradient(180deg, #161616 65%, #33b1ff);
 }
 
 #pulseaudio { color: #42be65; }
