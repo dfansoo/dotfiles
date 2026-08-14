@@ -1,11 +1,27 @@
 background-color=#161616
 text-color=#f2f4f8
 border-color=#33b1ff
-border-radius=8
+border-radius=10
 border-size=2
-padding=10
+padding=12
+margin=8
 font=JetBrainsMono Nerd Font 11
 default-timeout=5000
+max-visible=5
+sort=-time
+layer=overlay
+anchor=top-right
+icons=1
+max-icon-size=48
+group-by=app-name
+
+[urgency=low]
+border-color=#525252
+text-color=#c6c6c6
+
+[urgency=normal]
+border-color=#33b1ff
 
 [urgency=high]
 border-color=#ee5396
+default-timeout=0

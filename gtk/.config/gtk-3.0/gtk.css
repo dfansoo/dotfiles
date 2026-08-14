@@ -1,0 +1,13 @@
+@define-color accent_color #33b1ff;
+@define-color accent_bg_color #33b1ff;
+@define-color accent_fg_color #161616;
+
+selection {
+  background-color: #33b1ff;
+  color: #161616;
+}
+
+*:selected {
+  background-color: #33b1ff;
+  color: #161616;
+}

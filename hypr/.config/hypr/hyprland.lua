@@ -51,7 +51,6 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("systemctl --user start graphical-session.target")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
-  hl.exec_cmd("hyprpaper")
   hl.exec_cmd("nm-applet --indicator")
 end)
 
@@ -64,6 +63,8 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "capitaine-cursors")
+hl.env("HYPRCURSOR_THEME", "capitaine-cursors")
 
 
 -----------------------
@@ -212,7 +213,7 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        force_default_wallpaper = 2,     -- Pinned to wall2.png (train station scene) - do not randomize
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
@@ -265,6 +266,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
