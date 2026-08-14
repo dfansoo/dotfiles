@@ -10,7 +10,8 @@ sudo pacman -S --needed --noconfirm \
   jdk-openjdk maven dotnet-sdk-10.0 bun fnm \
   docker docker-compose \
   azure-cli \
-  network-manager-applet networkmanager-dmenu
+  network-manager-applet networkmanager-dmenu \
+  hyprlock capitaine-cursors
 # --- end package installation ---
 
 # --- stow ---
