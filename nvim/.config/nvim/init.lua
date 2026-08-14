@@ -27,15 +27,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "nyoom-engineering/oxocarbon.nvim",
     priority = 1000,
     config = function()
-      require("catppuccin").setup({ flavour = "mocha" })
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("oxocarbon")
     end,
   },
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+}, {
+  rocks = { enabled = false },
 })
 
 vim.keymap.set("n", "<leader>e", ":Ex<CR>")
