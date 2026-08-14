@@ -1,107 +1,156 @@
 * {
   font-family: "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font Mono", sans-serif;
   font-size: 13px;
-  font-weight: 600;
-  min-height: 0;
+  font-weight: bold;
+  min-height: 0px;
 }
 
 window#waybar {
-  background: transparent;
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
-window#waybar > box {
-  background-color: rgba(22, 22, 22, 0.85);
-  margin: 6px 10px 0 10px;
-  border-radius: 14px;
-  border: 1px solid rgba(51, 177, 255, 0.35);
-  padding: 2px 6px;
+tooltip {
+  padding: 4px;
+  background: #161616;
+  border: 1px solid rgba(242, 244, 248, 0.8);
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px 1px #0a0a0a;
+  font-size: 12px;
 }
+
+tooltip label {
+  color: #f2f4f8;
+  font-weight: normal;
+}
+
+/* --- Groups --- */
 
 #workspaces {
-  background-color: #262626;
-  border-radius: 10px;
-  margin: 4px 4px;
-  padding: 2px 4px;
+  border: 2px solid rgba(51, 177, 255, 0.7);
+  border-radius: 4px;
+  background-color: rgba(22, 22, 22, 0.95);
+  margin: 3px 1px;
+  padding: 1px 2px;
 }
 
+#window {
+  border: 2px solid rgba(51, 177, 255, 0.7);
+  border-radius: 4px;
+  background-color: rgba(22, 22, 22, 0.9);
+  color: #f2f4f8;
+  margin: 3px 1px;
+  padding: 1px 8px;
+  opacity: 0.95;
+}
+
+/* --- Workspaces --- */
+
 #workspaces button {
-  padding: 2px 10px;
-  margin: 2px;
-  border-radius: 8px;
-  color: #6f6f6f;
-  background: transparent;
-  transition: all 0.2s ease-in-out;
+  padding: 0px 6px;
+  margin: 1px 2px;
+  border-radius: 2px;
+  background-color: rgba(242, 244, 248, 0.15);
+  color: #f2f4f8;
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  color: #161616;
   background-color: #33b1ff;
+  color: #161616;
 }
 
 #workspaces button:hover {
+  background: linear-gradient(180deg, #161616 25%, #33b1ff);
   color: #f2f4f8;
-  background-color: #393939;
 }
 
-#clock,
+/* --- Right-side modules --- */
+
+#backlight,
+#idle_inhibitor,
+#mpris,
 #pulseaudio,
 #network,
+#cpu,
+#memory,
 #battery,
-#tray {
-  background-color: #262626;
-  border-radius: 10px;
-  margin: 4px 3px;
-  padding: 2px 12px;
-  color: #f2f4f8;
-}
-
+#tray,
 #clock {
-  color: #82cfff;
-  font-weight: 700;
+  border: 2px solid rgba(51, 177, 255, 0.7);
+  border-radius: 4px;
+  background-color: rgba(22, 22, 22, 0.95);
+  color: #f2f4f8;
+  margin: 3px 1px;
+  padding: 1px 8px;
 }
 
-#pulseaudio {
-  color: #42be65;
+#backlight:hover,
+#idle_inhibitor:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#clock:hover {
+  background: linear-gradient(180deg, #161616 65%, #33b1ff);
 }
 
-#pulseaudio.muted {
-  color: #6f6f6f;
-}
-
-#network {
-  color: #33b1ff;
-}
-
-#network.disconnected {
-  color: #ee5396;
-}
-
-#battery {
-  color: #3ddbd9;
-}
-
-#battery.warning:not(.charging) {
-  color: #be95ff;
-}
-
-#battery.critical:not(.charging) {
-  color: #ee5396;
-}
+#pulseaudio { color: #42be65; }
+#pulseaudio.muted { color: #6f6f6f; }
+#network { color: #33b1ff; }
+#network.disconnected { color: #ee5396; }
+#battery { color: #3ddbd9; }
+#mpris { color: #be95ff; }
+#clock { color: #82cfff; }
 
 #tray {
-  padding: 2px 10px;
+  background-color: rgba(22, 22, 22, 0.95);
 }
 
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
 
-tooltip {
-  background-color: #161616;
-  border: 1px solid #33b1ff;
-  border-radius: 10px;
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }
 
-tooltip label {
+/* --- idle inhibitor blink when active --- */
+
+@keyframes blink-inhibitor {
+  to { color: #161616; }
+}
+
+#idle_inhibitor.activated {
+  color: #178b76;
+  animation-name: blink-inhibitor;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* --- battery warning / critical states --- */
+
+#battery.warning:not(.charging) {
+  color: #ee5396;
+}
+
+@keyframes blink-battery {
+  to {
+    background-color: transparent;
+    color: #ee5396;
+  }
+}
+
+#battery.critical:not(.charging) {
   color: #f2f4f8;
+  animation-name: blink-battery;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }

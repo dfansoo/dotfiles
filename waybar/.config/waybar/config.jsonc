@@ -3,33 +3,59 @@
   "position": "top",
   "margin-top": 0,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "battery", "tray"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["backlight", "idle_inhibitor", "mpris", "pulseaudio", "network", "cpu", "memory", "battery", "tray", "clock"],
 
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": { "default": "", "active": "" }
+    "format": "{id}",
+    "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] }
   },
-  "clock": {
-    "format": "{:%H:%M   %a %d %b}",
-    "tooltip-format": "{:%A, %d %B %Y}"
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "rewrite": { " - ": "" }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": { "activated": "", "deactivated": "" }
+  },
+  "mpris": {
+    "format": " {dynamic}",
+    "format-paused": " {dynamic}",
+    "max-length": 40
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": " {percent}%"
   },
   "pulseaudio": {
-    "format": "   {volume}%",
-    "format-muted": "   muted",
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": { "default": ["", "", ""] },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "network": {
-    "format-wifi": "   {signalStrength}%",
-    "format-disconnected": "   disconnected",
+    "format-wifi": " {signalStrength}%",
+    "format-disconnected": " disconnected",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "on-click": "kitty -e nmtui"
   },
-  "battery": {
-    "format": "{icon}  {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%"
   },
-  "tray": {
-    "spacing": 10
+  "memory": {
+    "interval": 2,
+    "format": " {percentage}%"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "states": { "warning": 20, "critical": 10 }
+  },
+  "tray": { "spacing": 10 },
+  "clock": {
+    "format": " {:%H:%M   %a %d %b}",
+    "tooltip-format": "{:%A, %d %B %Y}"
   }
 }
