@@ -1,0 +1,31 @@
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+mauve = "#cba6f7"
+blue = "#89b4fa"
+green = "#a6e3a1"
+yellow = "#f9e2af"
+red = "#f38ba8"
+text = "#cdd6f4"
+surface0 = "#313244"
+
+format = """
+[](fg:surface0)$os$username[](bg:surface0 fg:blue)$directory[](fg:blue bg:surface0)$git_branch$git_status[](fg:surface0)
+$character"""
+
+[directory]
+style = "bg:surface0 fg:text"
+format = "[ $path ]($style)"
+
+[git_branch]
+style = "bg:surface0 fg:mauve"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:surface0 fg:red"
+format = "[$all_status$ahead_behind ]($style)"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"

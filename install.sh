@@ -16,3 +16,7 @@ sudo pacman -S --needed --noconfirm \
 cd "$(dirname "${BASH_SOURCE[0]}")"
 stow */
 # --- end stow ---
+
+# --- default shell ---
+sudo chsh -s /usr/bin/zsh dfanso
+# --- end default shell ---
