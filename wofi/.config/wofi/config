@@ -1,7 +1,11 @@
-width=600
-height=400
+width=650
+height=450
 location=center
 show=drun
-prompt=Search...
+prompt=Search apps...
 allow_markup=true
+allow_images=true
+image_size=32
 insensitive=true
+gtk_dark=true
+term=kitty
