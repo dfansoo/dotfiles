@@ -11,12 +11,12 @@ sudo pacman -S --needed --noconfirm \
   docker docker-compose \
   azure-cli \
   network-manager-applet networkmanager-dmenu \
-  hyprlock capitaine-cursors
+  hyprlock capitaine-cursors brightnessctl
 # --- end package installation ---
 
 # --- stow ---
 cd "$(dirname "${BASH_SOURCE[0]}")"
-stow */
+for d in */; do [ "${d%/}" = "system" ] && continue; stow "${d%/}"; done
 # --- end stow ---
 
 # --- default shell ---
@@ -30,6 +30,13 @@ fnm use lts-latest
 fnm default lts-latest
 npm install -g postman-cli
 # --- end node + postman cli ---
+
+# --- backlight permissions ---
+sudo cp "./system/90-backlight.rules" /etc/udev/rules.d/90-backlight.rules
+sudo usermod -aG video dfanso
+sudo udevadm control --reload-rules
+sudo udevadm trigger --subsystem-match=backlight --action=add
+# --- end backlight permissions ---
 
 # --- docker ---
 sudo systemctl enable --now docker.service
