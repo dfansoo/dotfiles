@@ -10,15 +10,15 @@ window#waybar {
 }
 
 window#waybar > box {
-  background-color: rgba(30, 30, 46, 0.85);
+  background-color: rgba(22, 22, 22, 0.85);
   margin: 6px 10px 0 10px;
   border-radius: 14px;
-  border: 1px solid rgba(137, 180, 250, 0.35);
+  border: 1px solid rgba(51, 177, 255, 0.35);
   padding: 2px 6px;
 }
 
 #workspaces {
-  background-color: #181825;
+  background-color: #262626;
   border-radius: 10px;
   margin: 4px 4px;
   padding: 2px 4px;
@@ -28,19 +28,19 @@ window#waybar > box {
   padding: 2px 10px;
   margin: 2px;
   border-radius: 8px;
-  color: #6c7086;
+  color: #6f6f6f;
   background: transparent;
   transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-  color: #1e1e2e;
-  background-color: #89b4fa;
+  color: #161616;
+  background-color: #33b1ff;
 }
 
 #workspaces button:hover {
-  color: #cdd6f4;
-  background-color: #313244;
+  color: #f2f4f8;
+  background-color: #393939;
 }
 
 #clock,
@@ -48,44 +48,44 @@ window#waybar > box {
 #network,
 #battery,
 #tray {
-  background-color: #181825;
+  background-color: #262626;
   border-radius: 10px;
   margin: 4px 3px;
   padding: 2px 12px;
-  color: #cdd6f4;
+  color: #f2f4f8;
 }
 
 #clock {
-  color: #f5c2e7;
+  color: #82cfff;
   font-weight: 700;
 }
 
 #pulseaudio {
-  color: #a6e3a1;
+  color: #42be65;
 }
 
 #pulseaudio.muted {
-  color: #6c7086;
+  color: #6f6f6f;
 }
 
 #network {
-  color: #89b4fa;
+  color: #33b1ff;
 }
 
 #network.disconnected {
-  color: #f38ba8;
+  color: #ee5396;
 }
 
 #battery {
-  color: #94e2d5;
+  color: #3ddbd9;
 }
 
 #battery.warning:not(.charging) {
-  color: #f9e2af;
+  color: #be95ff;
 }
 
 #battery.critical:not(.charging) {
-  color: #f38ba8;
+  color: #ee5396;
 }
 
 #tray {
@@ -97,11 +97,11 @@ window#waybar > box {
 }
 
 tooltip {
-  background-color: #1e1e2e;
-  border: 1px solid #89b4fa;
+  background-color: #161616;
+  border: 1px solid #33b1ff;
   border-radius: 10px;
 }
 
 tooltip label {
-  color: #cdd6f4;
+  color: #f2f4f8;
 }

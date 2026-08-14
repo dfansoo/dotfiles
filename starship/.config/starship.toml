@@ -1,14 +1,14 @@
-palette = "catppuccin_mocha"
+palette = "oxocarbon"
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-mauve = "#cba6f7"
-blue = "#89b4fa"
-green = "#a6e3a1"
-yellow = "#f9e2af"
-red = "#f38ba8"
-text = "#cdd6f4"
-surface0 = "#313244"
+[palettes.oxocarbon]
+rosewater = "#f2f4f8"
+mauve = "#be95ff"
+blue = "#33b1ff"
+green = "#42be65"
+yellow = "#ee5396"
+red = "#ee5396"
+text = "#f2f4f8"
+surface0 = "#393939"
 
 format = """
 [](fg:surface0)$os$username[](bg:surface0 fg:blue)$directory[](fg:blue bg:surface0)$git_branch$git_status[](fg:surface0)

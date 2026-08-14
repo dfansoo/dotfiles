@@ -1,6 +1,6 @@
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#89b4fa
+background-color=#161616
+text-color=#f2f4f8
+border-color=#33b1ff
 border-radius=8
 border-size=2
 padding=10
@@ -8,4 +8,4 @@ font=JetBrainsMono Nerd Font 11
 default-timeout=5000
 
 [urgency=high]
-border-color=#f38ba8
+border-color=#ee5396

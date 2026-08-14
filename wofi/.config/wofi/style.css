@@ -1,20 +1,20 @@
 window {
-  background-color: #1e1e2e;
-  border: 2px solid #89b4fa;
+  background-color: #161616;
+  border: 2px solid #33b1ff;
   border-radius: 10px;
 }
 
 #input {
-  background-color: #313244;
-  color: #cdd6f4;
+  background-color: #262626;
+  color: #f2f4f8;
   border-radius: 6px;
   margin: 6px;
 }
 
 #entry:selected {
-  background-color: #45475a;
+  background-color: #393939;
 }
 
 #text {
-  color: #cdd6f4;
+  color: #f2f4f8;
 }
