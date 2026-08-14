@@ -37,7 +37,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "thunar"
-local menu        = "hyprland-run"
+local menu        = "wofi --show drun"
 
 
 -------------------
@@ -48,6 +48,7 @@ local menu        = "hyprland-run"
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 hl.on("hyprland.start", function ()
+  hl.exec_cmd("systemctl --user start graphical-session.target")
   hl.exec_cmd("waybar")
   hl.exec_cmd("mako")
   hl.exec_cmd("hyprpaper")
@@ -294,6 +295,10 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Desktop context menu (Hyprland has no real "desktop" surface, so plain
+-- right-click can't be bound without breaking right-click inside every app)
+hl.bind(mainMod .. " + SHIFT + mouse:273", hl.dsp.exec_cmd("~/.local/bin/desktop-menu.sh"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
