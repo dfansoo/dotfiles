@@ -33,3 +33,9 @@ npm install -g postman-cli
 sudo systemctl enable --now docker.service
 sudo usermod -aG docker dfanso
 # --- end docker ---
+
+# --- github sync ---
+# Run once per machine, then git push works without prompting:
+#   gh auth login
+#   gh auth setup-git
+# --- end github sync ---
