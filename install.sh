@@ -20,3 +20,11 @@ stow */
 # --- default shell ---
 sudo chsh -s /usr/bin/zsh dfanso
 # --- end default shell ---
+
+# --- node + postman cli ---
+eval "$(fnm env)"
+fnm install --lts
+fnm use lts-latest
+fnm default lts-latest
+npm install -g postman-cli
+# --- end node + postman cli ---
